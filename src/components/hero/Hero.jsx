@@ -1,6 +1,8 @@
 import "./hero.css";
 import { motion } from "motion/react";
 import { Canvas } from "@react-three/fiber";
+import { Suspense } from 'react';
+import Shape from "./Shape";
 
 const awardVariants = {
   initial: {
@@ -172,10 +174,16 @@ const Hero = () => {
       </motion.a>
     </div>
 
+    {/* 3D Blob */}
     <div className="bg">
       <div className="hImg">
         <img src="/hero.png" alt="main photo" />
       </div>
+    <Canvas>
+      <Suspense>
+        <Shape />
+      </Suspense>
+    </Canvas>
     </div>
   </div>
 };
