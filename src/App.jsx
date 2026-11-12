@@ -1,11 +1,11 @@
-import "./components/hero/Hero";
-import "./components/services/Services";
-import "./components/contact/Contact";
-import "./components/portfolio/Portfolio";
+import Hero from "./components/hero/Hero"
+import Services from "./components/services/Services";
+import Portfolio from "./components/portfolio/Portfolio";
+import Contact from "./components/contact/Contact";
 
 const App = () => {
   return (
-    <div className=''>Hello World
+    <div className="container">Hello World
       <Hero />
       <Services /> 
       <Portfolio />
