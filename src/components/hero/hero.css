@@ -163,10 +163,6 @@
   .awards {
     width: 60%;
   }
-
-  .bubbleContainer {
-    width: 100%;
-  }
 }
 
 @media (max-width: 1024px) {
@@ -214,8 +210,7 @@
     justify-content: end;
   }
 
-  .follow,
-  .bubbleContainer {
+  .follow {
     display: none;
   }
 }

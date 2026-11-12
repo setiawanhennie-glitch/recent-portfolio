@@ -1,28 +1,77 @@
 import "./hero.css";
+import { motion } from "motion/react";
+import { Canvas } from "@react-three/fiber";
+
+const awardVariants = {
+  initial: {
+    x: -100,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const followVariants = {
+  initial: {
+    y: -100,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.2,
+    },
+  },
+};
 
 const Hero = () => {
   return <div className="hero">
   <div className="hSection left">
           {/* TITLE */}
-          <h1 className="hTitle">
+          <motion.h1 
+            initial={{ y: -100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1 }}
+            className="hTitle">
             Hey There,
             <br/>
             <span>I'm Hennie!</span>
-          </h1>
+          </motion.h1>
 
         {/* AWARDS */}
-        <div className="awards">
-          <h2>I am a Software Engineer</h2>
-          <p>Bla Bla bla</p>
-          <div className="awardList">
+        <motion.div           
+          variants={awardVariants}
+          initial="initial"
+          animate="animate"
+          className="awards">
+          <motion.h2 variants={awardVariants}>I am a Software Engineer</motion.h2>
+          <motion.p variants={awardVariants}>Bla Bla bla</motion.p>
+          <motion.div variants={awardVariants} className="awardList">
             <img src="/award1.png" alt="" />
             <img src="/award2.png" alt="" />
             <img src="/award3.png" alt="" />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* SCROLL SVG */}
-        <a href="services">
+        <motion.a
+          animate={{ y: [0, 5], opacity: [0, 1, 0] }}
+          transition={{
+            repeat: Infinity,
+            duration: 4,
+            ease: "easeInOut",
+          }}
+          href="#services"
+          className="scroll"
+        >
           <svg
             width="50px"
             height="50px"
@@ -42,28 +91,51 @@ const Hero = () => {
               strokeLinecap="round"
             />
           </svg>
-        </a>
+        </motion.a>
       </div>
     
     <div className="hSection right">
       {/* FOLLOW */}
-      <div className="follow">
-        <a href="/">
+      <motion.div 
+          variants={followVariants}
+          initial="initial"
+          animate="animate"
+          className="follow">
+        <motion.a href="/">
           <img src="/instagram.png" alt="" />
-        </a>
-        <a href="/">
+        </motion.a>
+        <motion.a href="/">
           <img src="/facebook.png" alt="" />
-        </a>
-        <a href="/">
+        </motion.a>
+        <motion.a href="/">
           <img src="/youtube.png" alt="" />
-        </a>
+        </motion.a>
         <div className="followTextContainer">
           <div className="followText">  FOLLOW ME</div>
         </div>
-      </div>
+      </motion.div>
+      
       {/* SCROLL DOWN BUTTON */}
-      <a href="/">
-        <div className="contactButton">
+        <motion.a
+          href="/#contact"
+          className="contactLink"
+          animate={{
+            x: [200, 0],
+            opacity: [0, 1],
+          }}
+          transition={{
+            duration: 2,
+          }}
+        >
+          <motion.div
+            className="contactButton"
+            animate={{ rotate: [0, 360] }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          >
             <svg viewBox="0 0 200 200" width="150" height="150">
               <circle cx="100" cy="100" r="90" fill="pink" />
               <path
@@ -96,8 +168,14 @@ const Hero = () => {
                 <polyline points="9 6 18 6 18 15" />
               </svg>
             </div>
-        </div>
-      </a>
+        </motion.div>
+      </motion.a>
+    </div>
+
+    <div className="bg">
+      <div className="hImg">
+        <img src="/hero.png" alt="main photo" />
+      </div>
     </div>
   </div>
 };
