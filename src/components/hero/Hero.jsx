@@ -180,7 +180,7 @@ const Hero = () => {
         <img src="/hero.png" alt="main photo" />
       </div>
     <Canvas>
-      <Suspense>
+      <Suspense fallback="loading...">
         <Shape />
       </Suspense>
     </Canvas>
