@@ -125,7 +125,6 @@ export function LogoTimelineDemo() {
     <div className="w-full overflow-hidden">
       <LogoTimeline
         items={logos}
-        title="Built with the best tools"
         height="h-[400px] sm:h-[400px]"
         iconSize={18}
         showRowSeparator={true}
