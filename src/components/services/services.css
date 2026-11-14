@@ -82,29 +82,54 @@
   background-color: #6c5c0c;
 }
 
+/* Wide laptops: cards breathe a little more */
 @media (max-width: 1536px) {
   .service {
     width: 70%;
   }
 }
 
+/* Laptops: smaller title, cards fill the column */
 @media (max-width: 1280px) {
   .sTitle { font-size: 64px; }
   .service { width: 100%; }
 }
 
+/* Tablets: two 50% columns no longer fit → stack them */
 @media (max-width: 1024px) {
-  .sTitle {
-    font-size: 48px;
+  .services {
+    flex-direction: column;
+    gap: 48px;
+    padding: 96px 32px;
   }
-
-  .service {
-    width: 100%;
-  }
+  .section { width: 100%; }
+  .sTitle { font-size: 48px; }
+  /* timeline now sits below the cards, still animated */
 }
 
+/* Phones: drop the animated band, tighten everything */
 @media (max-width: 768px) {
-  .services { align-items: center; justify-content: center; }
-  .section { width: 100%; }
+  .services {
+    gap: 32px;
+    padding: 64px 20px;
+  }
+  .sTitle {
+    font-size: 36px;
+    margin-bottom: 16px;
+  }
   .section.right { display: none; }
+  .service {
+    padding: 20px 16px;
+    gap: 12px;
+    border-radius: 16px;
+  }
+  .serviceIcon { width: 40px; height: 40px; }
+  .serviceIcon img { width: 20px; height: 20px; }
+  .serviceInfo h2 { font-size: 16px; margin-bottom: 4px; }
+  .serviceInfo h3 { font-size: 12px; }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .sTitle { font-size: 30px; }
 }

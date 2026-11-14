@@ -16,7 +16,7 @@ const listVariants = {
 
 const services = [
   { id: 1, img: "/service1.png", title: "Programming Languages", list: "HTML, CSS, Javascript, Typescript, Python" },
-  { id: 2, img: "/service2.png", title: "Framework & Libraries", list: "React, NodeJS, Next.js, Tailwind CSS" },
+  { id: 2, img: "/service2.png", title: "Frameworks & Libraries", list: "React, NodeJS, Next.js, Tailwind CSS" },
   { id: 3, img: "/service3.png", title: "Tools & Technologies", list: "Git, Github, VS Code, MongoDB, Supabase"},
 ];
 
