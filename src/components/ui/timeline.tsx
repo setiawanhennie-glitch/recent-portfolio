@@ -34,6 +34,7 @@ export interface LogoTimelineProps {
   showRowSeparator?: boolean
   /** Whether to animate logos only on hover (default: false) */
   animateOnHover?: boolean
+  highlighted?: boolean
 }
 
 export function LogoTimeline({
@@ -100,9 +101,9 @@ export function LogoTimeline({
                   <div
                     key={`${logo.row}-${logo.label}`}
                     className={cn(
-                      "absolute top-1/2 flex -translate-y-1/2 items-center gap-2 whitespace-nowrap rounded-full",
-                      "border border-white/10 bg-neutral-900/90 px-3 py-1.5 text-white backdrop-blur-sm",
-                      "shadow-[0_0_15px_rgba(0,0,0,0.1)]"
+                      "absolute left-0 top-1/2 flex w-max -translate-y-1/2 flex-row flex-nowrap items-center gap-2 whitespace-nowrap rounded-full border border-white/0 bg-neutral-900/90 px-3 py-1.5 text-white backdrop-blur-sm",
+                      logo.highlighted &&
+                        "bg-white-400/20 shadow-[0_0_18px_rgba(255,255,255,0.7)]"
                     )}
                     style={{
                       animationName: "move-x",
@@ -115,7 +116,7 @@ export function LogoTimeline({
 
                   >
                     {logo.icon}
-                    <span className="text-foreground text-sm/6 font-medium">
+                    <span className="shrink-0 whitespace-nowrap text-sm/6 font-medium">
                       {logo.label}
                     </span>
                   </div>

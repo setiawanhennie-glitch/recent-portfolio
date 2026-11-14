@@ -120,11 +120,28 @@ const logos: LogoItem[] = [
   },
 ]
 
-export function LogoTimelineDemo() {
+const labelsByService: Record<number, string[]> = {
+  1: ["HTML", "CSS", "Javascript", "TypeScript", "Python"],
+  2: ["React", "NodeJS", "Next.JS", "Tailwind"],
+  3: ["GitHub", "VS Code", "MongoDB", "Supabase"],
+}
+
+export function LogoTimelineDemo({
+  activeServiceId,
+}: {
+  activeServiceId: number | null
+}) {
+  const highlightedLabels = activeServiceId
+    ? labelsByService[activeServiceId] ?? []
+    : []
+
   return (
     <div className="w-full overflow-hidden">
       <LogoTimeline
-        items={logos}
+        items={logos.map((logo) => ({
+          ...logo,
+          highlighted: highlightedLabels.includes(logo.label),
+        }))}
         height="h-[400px] sm:h-[400px]"
         iconSize={18}
         showRowSeparator={true}

@@ -23,7 +23,7 @@ const services = [
 const Services = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [currentServiceId, setCurrentServiceId] = useState(services[0].id);
+  const [currentServiceId, setCurrentServiceId] = useState(null);
 
   return (
     <div className="services" ref={ref}>
@@ -48,7 +48,8 @@ const Services = () => {
               variants={listVariants}
               key={service.id}
               className={`service${service.id === currentServiceId ? " active" : ""}`}
-              onClick={() => setCurrentServiceId(service.id)}
+              onMouseEnter={() => setCurrentServiceId(service.id)}
+              onMouseLeave={() => setCurrentServiceId(null)}
             >
               <div className="serviceIcon">
                 <img src={service.img} alt={service.title} />
@@ -64,7 +65,7 @@ const Services = () => {
 
       <div className="section right">
         <div className="timelineWrap">
-          <LogoTimelineDemo />
+          <LogoTimelineDemo activeServiceId={currentServiceId} />
         </div>
       </div>
     </div>
