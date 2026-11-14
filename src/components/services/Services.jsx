@@ -1,13 +1,72 @@
+import { useRef, useState } from "react";
+import { motion, useInView } from "motion/react";
+
 import "./services.css";
 import LogoTimelineDemo from "@/components/services/demo";
 
+const textVariants = {
+  initial: { x: -100, y: -100, opacity: 0 },
+  animate: { x: 0, y: 0, opacity: 1, transition: { duration: 1 } },
+};
+
+const listVariants = {
+  initial: { x: -100, opacity: 0 },
+  animate: { x: 0, opacity: 1, transition: { duration: 1, staggerChildren: 0.5 } },
+};
+
+const services = [
+  { id: 1, img: "/service1.png", title: "Web Development", counter: 35 },
+  { id: 2, img: "/service2.png", title: "Product Design", counter: 23 },
+  { id: 3, img: "/service3.png", title: "Branding", counter: 46 },
+];
+
 const Services = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [currentServiceId, setCurrentServiceId] = useState(services[0].id);
+
   return (
-    <div className="services">
-      <div className="section left"></div>
-      Services
-      <div className="section right"></div>
-      <LogoTimelineDemo></LogoTimelineDemo>
+    <div className="services" ref={ref}>
+      <div className="section left">
+        <motion.h1
+          variants={textVariants}
+          initial="initial"
+          animate={isInView ? "animate" : "initial"}
+          className="sTitle"
+        >
+          Technical Skills
+        </motion.h1>
+
+        <motion.div
+          variants={listVariants}
+          initial="initial"
+          animate={isInView ? "animate" : "initial"}
+          className="serviceList"
+        >
+          {services.map((service) => (
+            <motion.div
+              variants={listVariants}
+              key={service.id}
+              className={`service${service.id === currentServiceId ? " active" : ""}`}
+              onClick={() => setCurrentServiceId(service.id)}
+            >
+              <div className="serviceIcon">
+                <img src={service.img} alt={service.title} />
+              </div>
+              <div className="serviceInfo">
+                <h2>{service.title}</h2>
+                <h3>{service.counter} Projects</h3>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+
+      <div className="section right">
+        <div className="timelineWrap">
+          <LogoTimelineDemo />
+        </div>
+      </div>
     </div>
   );
 };
