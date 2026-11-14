@@ -100,12 +100,14 @@ export function LogoTimeline({
                   <div
                     key={`${logo.row}-${logo.label}`}
                     className={cn(
-                      "absolute top-1/2 flex items-center gap-2 px-3 py-1.5 whitespace-nowrap",
+                      "absolute left-0 top-1/2 flex items-center gap-2 px-3 py-1.5 whitespace-nowrap",
                       "ring-background/10 dark:ring-foreground/10 rounded-full bg-linear-to-t from-white/50 from-50% to-white/50 ring-1 backdrop-blur-sm ring-inset dark:from-neutral-900 dark:to-gray-900",
-                      "[--move-x-from:-100%] [--move-x-to:calc(100%_+_100cqw)] [animation-name:move-x] [animation-timing-function:linear] [animation-iteration-count:infinite]",
                       "shadow-[0_0_15px_rgba(0,0,0,0.1)] dark:shadow-none"
                     )}
                     style={{
+                      animationName: "move-x",
+                      animationTimingFunction: "linear",
+                      animationIterationCount: "infinite",
                       animationDelay: `${logo.animationDelay}s`,
                       animationDuration: `${logo.animationDuration}s`,
                       animationPlayState,

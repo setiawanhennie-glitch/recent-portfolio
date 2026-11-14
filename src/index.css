@@ -66,9 +66,10 @@ section {
 
 @keyframes move-x {
   from {
-    transform: translate3d(var(--move-x-from), -50%, 0);
+    transform: translate3d(-100%, -50%, 0);
   }
+
   to {
-    transform: translate3d(var(--move-x-to), -50%, 0);
+    transform: translate3d(100cqw, -50%, 0);
   }
 }
