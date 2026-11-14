@@ -17,6 +17,8 @@ export interface LogoItem {
   animationDuration: number
   /** The row number where this logo should appear (1-based) */
   row: number
+  /** Whether this logo should be highlighted visually */
+  highlighted?: boolean
 }
 
 export interface LogoTimelineProps {
