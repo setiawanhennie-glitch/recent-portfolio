@@ -1,17 +1,17 @@
 import {
-  IconBrandApple,
-  IconBrandDiscord,
+  IconBrandMongodb,
+  IconBrandHtml5,
   IconBrandGithub,
-  IconBrandGoogleDrive,
-  IconBrandMessenger,
-  IconBrandNotion,
-  IconBrandOpenai,
-  IconBrandPaypal,
+  IconBrandJavascript,
+  IconBrandVscode,
+  IconBrandNextjs,
+  IconBrandPython,
+  IconBrandSupabase,
   IconBrandReact,
   IconBrandTailwind,
   IconBrandTypescript,
-  IconBrandWhatsapp,
-  IconBrandX,
+  IconBrandNodejs,
+  IconBrandCss3,
 } from "@tabler/icons-react"
 
 import { LogoTimeline } from "@/components/ui/timeline"
@@ -20,15 +20,15 @@ import type { LogoItem } from "@/components/ui/timeline"
 const logos: LogoItem[] = [
   // Row 1 - Communication & Social (2 logos, 50s duration, spaced 25s apart)
   {
-    label: "Discord",
-    icon: <IconBrandDiscord />,
+    label: "HTML",
+    icon: <IconBrandHtml5 />,
     animationDelay: -50,
     animationDuration: 50,
     row: 1,
   },
   {
-    label: "X (Twitter)",
-    icon: <IconBrandX />,
+    label: "CSS",
+    icon: <IconBrandCss3 />,
     animationDelay: -25,
     animationDuration: 50,
     row: 1,
@@ -66,38 +66,38 @@ const logos: LogoItem[] = [
 
   // Row 4 - Productivity & Cloud (2 logos, 55s duration, spaced 27.5s apart)
   {
-    label: "Google Drive",
-    icon: <IconBrandGoogleDrive />,
+    label: "Javascript",
+    icon: <IconBrandJavascript />,
     animationDelay: -55,
     animationDuration: 55,
     row: 4,
   },
   {
-    label: "Notion",
-    icon: <IconBrandNotion />,
+    label: "Next.JS",
+    icon: <IconBrandNextjs />,
     animationDelay: -27.5,
     animationDuration: 55,
     row: 4,
   },
   // Row 5 - Messaging (2 logos, 50s duration, spaced 25s apart)
   {
-    label: "WhatsApp",
-    icon: <IconBrandWhatsapp />,
+    label: "NodeJS",
+    icon: <IconBrandNodejs />,
     animationDelay: -50,
     animationDuration: 50,
     row: 5,
   },
   {
-    label: "Messenger",
-    icon: <IconBrandMessenger />, // Placeholder icon
+    label: "VS Code",
+    icon: <IconBrandVscode />, // Placeholder icon
     animationDelay: -25,
     animationDuration: 50,
     row: 5,
   },
   // Row 6 - AI & Automation (3 logos, 65s duration, spaced ~21.5s apart)
   {
-    label: "OpenAI",
-    icon: <IconBrandOpenai />, // Placeholder icon
+    label: "Python",
+    icon: <IconBrandPython />, // Placeholder icon
     animationDelay: -65,
     animationDuration: 65,
     row: 6,
@@ -105,15 +105,15 @@ const logos: LogoItem[] = [
 
   // Row 7 - Payment & Services (2 logos, 50s duration, spaced 25s apart)
   {
-    label: "PayPal",
-    icon: <IconBrandPaypal />, // Placeholder icon
+    label: "Supabase",
+    icon: <IconBrandSupabase />, // Placeholder icon
     animationDelay: -50,
     animationDuration: 50,
     row: 7,
   },
   {
-    label: "Apple",
-    icon: <IconBrandApple />, // Placeholder icon
+    label: "MongoDB",
+    icon: <IconBrandMongodb />, // Placeholder icon
     animationDelay: -25,
     animationDuration: 50,
     row: 7,

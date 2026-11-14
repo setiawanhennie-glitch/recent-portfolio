@@ -1,4 +1,8 @@
 @import "tailwindcss";
+@theme {
+  --color-background: #171021; 
+  --color-foreground: #f2eef7;
+}
 
 * {
     padding: 0;
