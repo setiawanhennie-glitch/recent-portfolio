@@ -18,8 +18,11 @@
 }
 
 .timelineWrap {
-  width: min(90%, 720px);
-  margin-inline: auto;
+  position: relative;
+  width: 100%;
+  margin: auto;
+
+  /* dissolve chips at both band edges */
   -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
           mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
 }
