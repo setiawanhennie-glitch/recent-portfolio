@@ -105,7 +105,7 @@ export function LogoTimeline({
                     className={cn(
                       "absolute left-0 top-1/2 flex w-max -translate-y-1/2 flex-row flex-nowrap items-center gap-2 whitespace-nowrap rounded-full border border-white/0 bg-neutral-900/90 px-3 py-1.5 text-white backdrop-blur-sm",
                       logo.highlighted &&
-                        "bg-white-400/20 shadow-[0_0_18px_rgba(255,255,255,0.7)]"
+                        "bg-[#FFC6D0]/20 shadow-[0_0_18px_rgba(255,198,208,0.7)]"
                     )}
                     style={{
                       animationName: "move-x",
